@@ -66,7 +66,7 @@ namespace RevitAPITrainingCreateModel
             // Создание стен по линиям, образованным из списка точек
             Transaction transaction = new Transaction(doc, "Построение стен");
             transaction.Start();
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < (wPoints.Count-1); i++)
             {
                 Line line = Line.CreateBound(wPoints[i], wPoints[i + 1]);
                 Wall wall = Wall.Create(doc, line, level1.Id, false);
